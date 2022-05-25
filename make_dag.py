@@ -10,14 +10,14 @@ import os, sys
 ########################################
 # Set up your paths and variables that you want to use
 ########################################
-script = "/data/condor_builds/users/mlarson/condor_examples/test_script.py"
-submit_file = "/data/condor_builds/users/mlarson/condor_examples/submit.sub"
+script = "/data/condor_builds/users/mlarson/htccondor_example/test_script.py"
+submit_file = "/data/condor_builds/users/mlarson/htccondor_example/submit.sub"
 
 dag_name = "myjobs.dag"
 
 dataset_dir = "/data/i3store/users/mjlarson/ps_tracks/version-004-p01/"
-outdir = "/data/condor_builds/users/mlarson/condor_examples/output/"
-logdir = "/data/condor_builds/users/mlarson/condor_examples/logs/"
+outdir = "/data/condor_builds/users/mlarson/htccondor_example/output/"
+logdir = "/data/condor_builds/users/mlarson/htccondor_example/logs/"
 
 # And any other variables you might need
 ntrials_per_file = 100
