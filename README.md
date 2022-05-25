@@ -34,9 +34,13 @@ This will begin the process of actually submitting your jobs to the cluster. If 
 
 which will start printing out updates from condor by reading the myjobs.dag.dagman.out file. You'll want to look for lines like this:
 > 05/25/22 15:51:35 Of 10 nodes total:
+>
 > 05/25/22 15:51:35  Done     Pre   Queued    Post   Ready   Un-Ready   Failed
+> 
 > 05/25/22 15:51:35   ===     ===      ===     ===     ===        ===      ===
+> 
 > 05/25/22 15:51:35     3       0        7       0       0          0        0
+> 
 > 05/25/22 15:51:35 0 job proc(s) currently held
 
 This tells us how many jobs are done, how many are currently waiting or running ("Queued"), how many are waiting to be submitted ("Ready" and "Un-Ready"), and how many have failed ("Failed"). It'll also tell you if any are held, which normally indicates that they have hit a memory limit or have otherwise exceeded their allowed resources.
