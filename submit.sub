@@ -1,5 +1,5 @@
-executable = $(exe)
-Arguments = $(args)
+executable = /usr/bin/env
+Arguments = $(cmd)
 
 # All logs will go to a single file 
 log = $(log_dir)/$(job_name).log

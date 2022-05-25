@@ -40,11 +40,12 @@ for filenum in range(nfiles_per_nside):
     # And an output file name
     outfile = os.path.join(outdir, job_name+".npy")
 
-    # Write out the arguments that you need to run the script
-    arguments = "--dataset_dir {} ".format(dataset_dir)
-    arguments += "--ntrials {} ".format(ntrials_per_file)
-    arguments += "--nside {} ".format(nside)
-    arguments += "--outfile {} ".format(outfile)
+    # Write out the command that you want condor to run
+    cmd = "{} ".format(script)
+    cmd += "--dataset_dir {} ".format(dataset_dir)
+    cmd += "--ntrials {} ".format(ntrials_per_file)
+    cmd += "--nside {} ".format(nside)
+    cmd += "--outfile {} ".format(outfile)
 
     # Now we start writing Condor stuff.
     # We'll start with the basic stuff that's always here
@@ -53,8 +54,7 @@ for filenum in range(nfiles_per_nside):
     dag_contents += f"VARS {job_name} "
     dag_contents += f" job_name=\"{job_name}\" "
     dag_contents += f" log_dir=\"{logdir}\" "
-    dag_contents += f" exe=\"{script}\" "
-    dag_contents += f" args=\"{arguments}\" "
+    dag_contents += f" cmd=\"{cmd}\" "
     dag_contents += "\n"
 
     # Done. Move to the next trial.
