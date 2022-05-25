@@ -19,6 +19,7 @@ which will create a new file called `myjobs.dag`. This contains all of the infor
 > head myjobs.dag
 
 >JOB test_script_256_0 /data/condor_builds/users/mlarson/condor_examples/submit.sub
+>
 >VARS test_script_256_0  job_name="test_script_256_0"  log_dir="/data/condor_builds/users/mlarson/condor_examples/logs/"  cmd="/data/condor_builds/users/mlarson/condor_examples/test_script.py --dataset_dir /data/i3store/users/mjlarson/ps_tracks/version-004-p01/ --ntrials 100 --nside 256 --outfile /data/condor_builds/users/mlarson/condor_examples/output/test_script_256_0.npy " 
 
 We need to test our command to make sure it's functional. The way we do this here is to copy everything inthe paranthesis after `cmd=` and try to run it. In this case, we'll do this:
@@ -34,9 +35,13 @@ This will begin the process of actually submitting your jobs to the cluster. If 
 
 which will start printing out updates from condor by reading the myjobs.dag.dagman.out file. You'll want to look for lines like this:
 > 05/25/22 15:51:35 Of 10 nodes total:
+>
 > 05/25/22 15:51:35  Done     Pre   Queued    Post   Ready   Un-Ready   Failed
+> 
 > 05/25/22 15:51:35   ===     ===      ===     ===     ===        ===      ===
+> 
 > 05/25/22 15:51:35     3       0        7       0       0          0        0
+> 
 > 05/25/22 15:51:35 0 job proc(s) currently held
 
 This tells us how many jobs are done, how many are currently waiting or running ("Queued"), how many are waiting to be submitted ("Ready" and "Un-Ready"), and how many have failed ("Failed"). It'll also tell you if any are held, which normally indicates that they have hit a memory limit or have otherwise exceeded their allowed resources.
