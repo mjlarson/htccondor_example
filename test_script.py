@@ -1,4 +1,6 @@
-#!/usr/bin/env python3
+#!/bin/sh /cvmfs/icecube.opensciencegrid.org/py3-v4.1.1/icetray-start
+#METAPROJECT icetray/v1.3.3
+##!/usr/bin/env python3
 #------------------------------------------------------------------------------#
 # Test script for use in the condor examples. Doesn't do anything terribly     #
 #  interesting, so don't expect much from it. Basically will just scramble     #

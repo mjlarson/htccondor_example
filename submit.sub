@@ -1,5 +1,5 @@
-executable = "$(exe)"
-Arguments = "$(args)"
+executable = $(exe)
+Arguments = $(args)
 
 # All logs will go to a single file 
 log = $(log_dir)/$(job_name).log
